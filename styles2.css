@@ -1,0 +1,209 @@
+@media only screen and (min-width:601px)and (max-width:1100px){
+    nav li{
+      display:none;
+    }
+    .background-image{
+      /* background-image: url(images/background-tablet.jpg); */
+      background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.1)),url(images/background-tablet.jpg);
+
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+    .buttons button{
+      padding: 1%;
+      width: 95px;
+      font-size:90%;
+      margin-top: 20%; 
+    }
+    .menu-icon{
+          display: block;
+          height: 5%;
+          width: 8%;
+          margin-left: 1%;
+          margin-right:0px;
+          border: none;
+          background-color: transparent;
+        }
+      .menu-icon img{
+          width: 100%;
+      }
+      .show_menu{
+           padding-top: 10%;
+           padding-bottom: 1%;
+          color:white;
+          display: block;
+          width: 100vw;
+          height: 10vh;
+         font-size: 70%;
+          flex-direction: column;
+          justify-content: flex-start; 
+      }
+      .show_menu .header{
+           margin-top: 5%;
+          display:inline-block;
+          padding: 0em;
+          box-sizing: border-box;
+          font-size: 140%;
+      }
+      .header img{
+        display: none;
+    }
+    
+    .apply-now{
+      padding: 3%;
+      width: 60%;
+    }
+    
+    footer div{
+      float: left;
+      margin: 3% 1%;
+          width:25%;
+    }
+  .links{
+    font-size:90%;
+  }
+    
+    .contacts{
+    width:20%;
+          font-size:80%;
+    }
+    .help{
+          width: 100%;
+      font-size:80%;
+    }
+    .loremipsum{
+      width: 20%;
+          text-align:left;
+          font-size:90%;
+    }
+    #slogan{
+      font-size: 400%;
+      
+    }
+    .trending{
+      font-size:120%;
+    }
+    
+    .searchbar {
+      width: 60%;
+    }
+    .searchbar:focus {
+      width: 80%;
+    }
+    .searchbutton{
+      padding: 16px;
+      
+    }
+   
+    
+    .jobs-container {
+      width: 50%;
+    }
+    .job-listing {
+      width: 33.33%;
+    }
+    .job-listing img {
+      width: 100%;
+    }
+    
+    .page-number{
+      display: inline;
+    }
+    
+    .enter{
+      width: 20%;
+      padding: 2%;
+    }
+    #selected{
+      background-color: #f6f5ee;
+      color:#325c3b;
+    }
+    .email{
+      margin: 10% 0%;
+      width: 100%;
+      text-align: center;
+    }
+    .email h2{
+      text-shadow: 2px 2px 5px grey;
+      font-style: italic;
+      margin: 2%;
+    }
+    .email input{
+      width: 30%;
+      padding:1%;
+      transition: width 0.7s ease-in-out;
+    }
+    .email input:focus{
+      width: 50%;
+    }
+    
+    .email button{
+      width: 6%;
+      height: 40px;
+      
+    }
+    .aboutus-stories{
+      margin-top: 300px;
+  }
+  .main-container{
+      margin-top: 10%;
+      width: 80%;
+    }
+  .users-data{
+      width: 80%;
+    }
+  .enter-register{
+      width: 35%;
+  }
+  .register-container, .login-container, .forgotpassword-container, contactus-container{
+    /* background-image: url("images/background-tablet.jpg"); */
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.5)),url(images/background-tablet.jpg);
+    }
+
+    .job-categories, .job-locations{
+      padding: 5%;
+      align-items: center;
+      width: 25%;
+   } 
+   .job-categories h2{
+      font-size: 150%;
+      width: 100%;
+    }
+   .job-locations h2{
+      font-size: 150%;
+      width: 100%;
+   } 
+    
+    .job-categories ul{
+      width: 100%;
+      font-size: 90%;
+    }
+    .job-locations ul{
+      width: 100%;
+      font-size: 90%;
+    }
+    .requirements h4{
+      font-size: 150%;
+    }
+    .requirements p{
+      font-size: 95%;
+      line-height: 1.2em;
+      width: 100%;
+    }
+    .figure-and-paragraph{
+      margin-bottom: 15%;
+    }
+    .aboutus-stories{
+      margin-top: 100px;
+    }
+ /* .story{
+  display: inline;
+  height: 200px;
+  position: absolute;
+ }
+ .aboutus-stories{
+  position: relative;
+  height: 1000px;
+ } */
+  }
+  
