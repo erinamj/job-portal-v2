@@ -37,10 +37,6 @@ asd
 - `style.css`, `styles1.css`, `styles2.css` - Styling
 - `vercel.json` - Deployment configuration
 
-## Contributors
-
-- [Erina](https://github.com/erinamj) - Project lead & development
-
 ---asdasd
 
 Built with HTML, CSS, and JavaScript.

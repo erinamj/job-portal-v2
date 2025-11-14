@@ -1,0 +1,112 @@
+{
+	"companies": [
+		{
+			"id": 1,
+			"name": "Tech Innovations Inc.",
+			"logo": "images/company1.logo.jpg",
+			"description": "Leading technology company specializing in AI and machine learning solutions. We're revolutionizing the way businesses operate through cutting-edge technology.",
+			"website": "https://techinnovations.example.com",
+			"industry": "Technology",
+			"location": "San Francisco, CA"
+		},
+		{
+			"id": 2,
+			"name": "Global Finance Corp",
+			"logo": "images/company2.logo.jpg",
+			"description": "Premier financial services provider offering comprehensive banking and investment solutions to individuals and businesses worldwide.",
+			"website": "https://globalfinance.example.com",
+			"industry": "Finance",
+			"location": "New York, NY"
+		},
+		{
+			"id": 3,
+			"name": "Creative Media Group",
+			"logo": "images/company3.logo.jpg",
+			"description": "Award-winning digital media agency creating innovative marketing campaigns and brand experiences that captivate audiences.",
+			"website": "https://creativemedia.example.com",
+			"industry": "Media & Marketing",
+			"location": "Los Angeles, CA"
+		},
+		{
+			"id": 4,
+			"name": "HealthCare Solutions",
+			"logo": "images/company1.logo.jpg",
+			"description": "Dedicated to improving patient care through innovative healthcare technology and comprehensive medical services.",
+			"website": "https://healthcaresolutions.example.com",
+			"industry": "Healthcare",
+			"location": "Boston, MA"
+		},
+		{
+			"id": 5,
+			"name": "EcoEnergy Systems",
+			"logo": "images/company2.logo.jpg",
+			"description": "Pioneering sustainable energy solutions to create a cleaner, greener future for generations to come.",
+			"website": "https://ecoenergy.example.com",
+			"industry": "Renewable Energy",
+			"location": "Austin, TX"
+		},
+		{
+			"id": 6,
+			"name": "Quantum Software Labs",
+			"logo": "images/company3.logo.jpg",
+			"description": "Developing next-generation software solutions that push the boundaries of what's possible in computing.",
+			"website": "https://quantumlabs.example.com",
+			"industry": "Software Development",
+			"location": "Seattle, WA"
+		},
+		{
+			"id": 7,
+			"name": "Retail Excellence Co.",
+			"logo": "images/company1.logo.jpg",
+			"description": "Transforming the retail experience with innovative e-commerce platforms and customer-centric solutions.",
+			"website": "https://retailexcellence.example.com",
+			"industry": "Retail",
+			"location": "Chicago, IL"
+		},
+		{
+			"id": 8,
+			"name": "Automotive Dynamics",
+			"logo": "images/company2.logo.jpg",
+			"description": "Leading the automotive industry with cutting-edge electric vehicle technology and sustainable transportation solutions.",
+			"website": "https://autodynamics.example.com",
+			"industry": "Automotive",
+			"location": "Detroit, MI"
+		},
+		{
+			"id": 9,
+			"name": "Education Hub",
+			"logo": "images/company3.logo.jpg",
+			"description": "Empowering learners worldwide through innovative online education platforms and personalized learning experiences.",
+			"website": "https://educationhub.example.com",
+			"industry": "Education",
+			"location": "Cambridge, MA"
+		},
+		{
+			"id": 10,
+			"name": "Construction Masters",
+			"logo": "images/company1.logo.jpg",
+			"description": "Building the future with sustainable construction practices and state-of-the-art engineering solutions.",
+			"website": "https://constructionmasters.example.com",
+			"industry": "Construction",
+			"location": "Denver, CO"
+		},
+		{
+			"id": 11,
+			"name": "Food & Hospitality Group",
+			"logo": "images/company2.logo.jpg",
+			"description": "Creating memorable dining experiences with world-class restaurants and hospitality services.",
+			"website": "https://foodhospitality.example.com",
+			"industry": "Food & Hospitality",
+			"location": "Miami, FL"
+		},
+		{
+			"id": 12,
+			"name": "Logistics Pro",
+			"logo": "images/company3.logo.jpg",
+			"description": "Streamlining global supply chains with advanced logistics solutions and efficient delivery systems.",
+			"website": "https://logisticspro.example.com",
+			"industry": "Logistics",
+			"location": "Memphis, TN"
+		}
+	]
+}
