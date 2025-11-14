@@ -7,7 +7,7 @@ const jobsPerPage = 8
 let allCompanies = []
 let filteredCompanies = []
 let currentCompaniesPage = 1
-const companiesPerPage = 8
+const companiesPerPage = 10
 
 // Load and Display Companies (COMPANIES PAGE ONLY)
 function loadCompanies() {
@@ -26,26 +26,18 @@ function loadCompanies() {
 	}
 
 	console.log('Loading companies...')
-	fetch('/companies.json')
-		.then((response) => {
-			if (!response.ok) {
-				throw new Error('Network response was not ok')
-			}
-			return response.json()
-		})
-		.then((data) => {
-			console.log('Companies loaded:', data.companies.length)
-			allCompanies = data.companies
-			filteredCompanies = allCompanies
-			currentCompaniesPage = 1
-			renderCompanies()
-			setupCompaniesFilters()
-		})
-		.catch((error) => {
-			console.error('Error loading companies:', error)
-			companiesGrid.innerHTML =
-				'<p style="text-align: center; color: #6b7280;">Unable to load companies. Please try again later.</p>'
-		})
+	try {
+		console.log('Companies loaded:', companiesData.length)
+		allCompanies = companiesData
+		filteredCompanies = allCompanies
+		currentCompaniesPage = 1
+		renderCompanies()
+		setupCompaniesFilters()
+	} catch (error) {
+		console.error('Error loading companies:', error)
+		companiesGrid.innerHTML =
+			'<p style="text-align: center; color: #6b7280;">Unable to load companies. Please try again later.</p>'
+	}
 }
 
 function renderCompanies() {
@@ -257,27 +249,19 @@ function loadJobCards() {
 	}
 
 	console.log('Loading jobs...')
-	fetch('/data.json')
-		.then((response) => {
-			if (!response.ok) {
-				throw new Error('Network response was not ok')
-			}
-			return response.json()
-		})
-		.then((jobs) => {
-			console.log('Jobs loaded:', jobs.length)
-			// Display first 8 jobs on home page
-			const jobsToShow = jobs.slice(0, 8)
-			const cardsHTML = jobsToShow.map((job) => createJobCard(job)).join('')
-			console.log('Cards HTML type:', typeof cardsHTML)
-			console.log('First 200 chars:', cardsHTML.substring(0, 200))
-			jobContainer.innerHTML = cardsHTML
-		})
-		.catch((error) => {
-			console.error('Error loading jobs:', error)
-			jobContainer.innerHTML =
-				'<p class="error-message">Unable to load jobs. Please try again later.</p>'
-		})
+	try {
+		console.log('Jobs loaded:', jobsData.length)
+		// Display first 8 jobs on home page
+		const jobsToShow = jobsData.slice(0, 8)
+		const cardsHTML = jobsToShow.map((job) => createJobCard(job)).join('')
+		console.log('Cards HTML type:', typeof cardsHTML)
+		console.log('First 200 chars:', cardsHTML.substring(0, 200))
+		jobContainer.innerHTML = cardsHTML
+	} catch (error) {
+		console.error('Error loading jobs:', error)
+		jobContainer.innerHTML =
+			'<p class="error-message">Unable to load jobs. Please try again later.</p>'
+	}
 }
 
 function createJobCard(job) {
@@ -510,62 +494,47 @@ function ruajRegister() {
 	}
 }
 
-// Load jobs from data.json
+// Load jobs from embedded data
 function loadJobs() {
 	console.log('loadJobs function started')
 
-	console.log('Fetching data.json...')
-	fetch('/data.json')
-		.then((response) => {
-			console.log('Fetch response:', response.ok, response.status)
+	try {
+		console.log('Loading jobs from embedded data...')
+		console.log('Jobs received:', jobsData)
+		console.log('Jobs length:', jobsData.length)
 
-			if (!response.ok) {
-				throw new Error('Failed to fetch: ' + response.status)
-			}
+		allJobs = jobsData
+		console.log('allJobs assigned')
+		console.log('All jobs loaded:', allJobs.length)
 
-			console.log('Parsing JSON...')
-			return response.json()
-		})
-		.then((jobs) => {
-			console.log('JSON parsed successfully')
-			console.log('Jobs received:', jobs)
-			console.log('Jobs length:', jobs.length)
+		if (allJobs.length > 0) {
+			console.log('First job:', allJobs[0])
+		}
 
-			allJobs = jobs
-			console.log('allJobs assigned')
-			console.log('All jobs loaded:', allJobs.length)
+		// Determine current page from URL
+		const currentPath = window.location.pathname
+		console.log('Current path in loadJobs:', currentPath)
 
-			if (allJobs.length > 0) {
-				console.log('First job:', allJobs[0])
-			}
+		if (currentPath.includes('vaj2.html')) {
+			currentPage = 2
+		} else if (currentPath.includes('vaj3.html')) {
+			currentPage = 3
+		} else if (currentPath.includes('view_all_jobs.html')) {
+			currentPage = 1
+		} else {
+			// Home page - show only first 8 jobs
+			currentPage = 1
+		}
 
-			// Determine current page from URL
-			const currentPath = window.location.pathname
-			console.log('Current path in loadJobs:', currentPath)
-
-			if (currentPath.includes('vaj2.html')) {
-				currentPage = 2
-			} else if (currentPath.includes('vaj3.html')) {
-				currentPage = 3
-			} else if (currentPath.includes('view_all_jobs.html')) {
-				currentPage = 1
-			} else {
-				// Home page - show only first 8 jobs
-				currentPage = 1
-			}
-
-			console.log('Current page set to:', currentPage)
-			console.log('About to call renderJobs')
-			renderJobs()
-			console.log('renderJobs called')
-		})
-		.catch((error) => {
-			console.error('Error loading jobs:', error)
-			console.error('Error stack:', error.stack)
-		})
-}
-
-// Render jobs to the page
+		console.log('Current page set to:', currentPage)
+		console.log('About to call renderJobs')
+		renderJobs()
+		console.log('renderJobs called')
+	} catch (error) {
+		console.error('Error loading jobs:', error)
+		console.error('Error stack:', error.stack)
+	}
+} // Render jobs to the page
 function renderJobs(jobsToRender = null) {
 	const jobContainer = document.querySelector('.job-all-container')
 	console.log(jobContainer)
