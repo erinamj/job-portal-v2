@@ -26,7 +26,7 @@ function loadCompanies() {
 	}
 
 	console.log('Loading companies...')
-	fetch('companies.json')
+	fetch('/companies.json')
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error('Network response was not ok')
@@ -257,7 +257,7 @@ function loadJobCards() {
 	}
 
 	console.log('Loading jobs...')
-	fetch('data.json')
+	fetch('/data.json')
 		.then((response) => {
 			if (!response.ok) {
 				throw new Error('Network response was not ok')
@@ -515,7 +515,7 @@ function loadJobs() {
 	console.log('loadJobs function started')
 
 	console.log('Fetching data.json...')
-	fetch('data.json')
+	fetch('/data.json')
 		.then((response) => {
 			console.log('Fetch response:', response.ok, response.status)
 
