@@ -90,7 +90,9 @@ function renderCompanies() {
 }
 
 function renderCompaniesPagination() {
-	const paginationContainer = document.getElementById('companies-pagination-container')
+	const paginationContainer = document.getElementById(
+		'companies-pagination-container'
+	)
 	if (!paginationContainer) return
 
 	const totalPages = Math.ceil(filteredCompanies.length / companiesPerPage)
