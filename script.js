@@ -71,7 +71,7 @@ function renderCompanies() {
 		.map(
 			(company) => `
 		<div class="partner-card">
-			<img src="${company.logo}" alt="${company.name} logo" onerror="this.src='images/prod-img.png'" />
+			<img src="${company.logo}" alt="${company.name} logo" onerror="this.src='../images/prod-img.png'" />
 			<h2>${company.name}</h2>
 			<p>${company.description}</p>
 			<div style="margin-top: auto; padding-top: 12px;">
@@ -293,7 +293,7 @@ function createJobCard(job) {
 		job.image +
 		'" alt="' +
 		job.company +
-		' logo" onerror="this.src=\'images/prod-img.png\'">' +
+		' logo" onerror="this.src=\'../images/prod-img.png\'">' +
 		'</div>' +
 		'<div class="job-type-badge ' +
 		jobTypeClass +
