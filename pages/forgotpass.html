@@ -4,28 +4,42 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../style.css" />
 	</head>
-	<body class="forgotpassword-container">
-		<div class="main-container">
-			<a href="login.html"><button class="x-button">X</button></a>
-			<h1 class="users-header">Forgot password?</h1>
-			<div class="inpute">
-				<input
-					class="users-data"
-					type="text"
-					name="email address"
-					placeholder="Email address"
-					class="input"
-				/>
+	<body class="auth-page">
+
+		<div class="auth-modal-container">
+			<div class="auth-modal">
+
+				<a href="javascript:history.back()" class="modal-close">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<line x1="18" y1="6" x2="6" y2="18"></line>
+						<line x1="6" y1="6" x2="18" y2="18"></line>
+					</svg>
+				</a>
+
+				<div class="auth-header">
+					<h1>Forgot password?</h1>
+					<p>Enter your email to receive a verification code</p>
+				</div>
+
+				<form class="auth-form" onsubmit="return false;">
+					<div class="form-group">
+						<label>Email address</label>
+						<input 
+							type="text"
+							placeholder="Email address"
+							class="form-input"
+						/>
+					</div>
+
+					<button class="auth-button" onclick="sendCode()">
+						Send Code
+					</button>
+				</form>
+
 			</div>
-			<input
-				class="enter-forgotpw"
-				type="submit"
-				value="Send code"
-				class="input"
-				onclick="sendCode()"
-			/>
 		</div>
+
 	</body>
-	<script type="text/javascript" src="data.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="../data.js"></script>
+	<script type="text/javascript" src="../script.js"></script>
 </html>
