@@ -263,67 +263,107 @@ function loadJobCards() {
 			'<p class="error-message">Unable to load jobs. Please try again later.</p>'
 	}
 }
-
 function createJobCard(job) {
-	const jobTypeClass = job.type.toLowerCase().replace(/\s+/g, '-')
-	const location = job.location.split(',').slice(-2).join(',').trim()
-	const description = job.description.substring(0, 100)
+	const jobTypeClass = job.type.toLowerCase().replace(/\s+/g, '-');
+	const location = job.location.split(',').slice(-2).join(',').trim();
+	const description = job.description.substring(0, 100);
 
 	const html =
 		'<div class="job-card">' +
 		'<div class="job-card-header">' +
 		'<div class="company-logo">' +
-		'<img src="' +
-		job.image +
-		'" alt="' +
-		job.company +
-		' logo" onerror="this.src=\'../images/prod-img.png\'">' +
+		'<img src="' + job.image + '" alt="' + job.company + ' logo" onerror="this.src=\'../images/prod-img.png\'">' +
 		'</div>' +
-		'<div class="job-type-badge ' +
-		jobTypeClass +
-		'">' +
-		job.type +
-		'</div>' +
+		'<div class="job-type-badge ' + jobTypeClass + '">' + job.type + '</div>' +
 		'</div>' +
 		'<div class="job-card-body">' +
-		'<h3 class="job-title">' +
-		job.title +
-		'</h3>' +
-		'<p class="company-name">' +
-		job.company +
-		'</p>' +
+		'<h3 class="job-title">' + job.title + '</h3>' +
+		'<p class="company-name">' + job.company + '</p>' +
 		'<div class="job-details">' +
 		'<div class="job-detail-item">' +
 		'<svg class="detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">' +
 		'<path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
 		'<path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
 		'</svg>' +
-		'<span>' +
-		location +
-		'</span>' +
+		'<span>' + location + '</span>' +
 		'</div>' +
 		'<div class="job-detail-item">' +
 		'<svg class="detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">' +
 		'<path d="M14 5.33333V2.66667C14 2.29848 13.7015 2 13.3333 2H2.66667C2.29848 2 2 2.29848 2 2.66667V5.33333M14 5.33333V13.3333C14 13.7015 13.7015 14 13.3333 14H2.66667C2.29848 14 2 13.7015 2 13.3333V5.33333M14 5.33333H2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
 		'</svg>' +
-		'<span class="job-salary">' +
-		job.salary +
-		'</span>' +
+		'<span class="job-salary">' + job.salary + '</span>' +
 		'</div>' +
 		'</div>' +
-		'<p class="job-description">' +
-		description +
-		'...</p>' +
+		// '<p class="job-description">' + description + '...</p>' +
 		'</div>' +
 		'<div class="job-card-footer">' +
-		'<a href="' +
-		job.link +
-		'" class="job-apply-btn">View Details</a>' +
+		'<a href="employerdetails.html?id=' + job.id + '" class="job-apply-btn">View Details</a>' +
 		'</div>' +
-		'</div>'
+		'</div>';
 
-	return html
+	return html;
 }
+
+// function createJobCard(job) {
+// 	const jobTypeClass = job.type.toLowerCase().replace(/\s+/g, '-')
+// 	const location = job.location.split(',').slice(-2).join(',').trim()
+// 	const description = job.description.substring(0, 100)
+
+// 	const html =
+// 		'<div class="job-card">' +
+// 		'<div class="job-card-header">' +
+// 		'<div class="company-logo">' +
+// 		'<img src="' +
+// 		job.image +
+// 		'" alt="' +
+// 		job.company +
+// 		' logo" onerror="this.src=\'../images/prod-img.png\'">' +
+// 		'</div>' +
+// 		'<div class="job-type-badge ' +
+// 		jobTypeClass +
+// 		'">' +
+// 		job.type +
+// 		'</div>' +
+// 		'</div>' +
+// 		'<div class="job-card-body">' +
+// 		'<h3 class="job-title">' +
+// 		job.title +
+// 		'</h3>' +
+// 		'<p class="company-name">' +
+// 		job.company +
+// 		'</p>' +
+// 		'<div class="job-details">' +
+// 		'<div class="job-detail-item">' +
+// 		'<svg class="detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">' +
+// 		'<path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+// 		'<path d="M8 5V8L10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+// 		'</svg>' +
+// 		'<span>' +
+// 		location +
+// 		'</span>' +
+// 		'</div>' +
+// 		'<div class="job-detail-item">' +
+// 		'<svg class="detail-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">' +
+// 		'<path d="M14 5.33333V2.66667C14 2.29848 13.7015 2 13.3333 2H2.66667C2.29848 2 2 2.29848 2 2.66667V5.33333M14 5.33333V13.3333C14 13.7015 13.7015 14 13.3333 14H2.66667C2.29848 14 2 13.7015 2 13.3333V5.33333M14 5.33333H2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+// 		'</svg>' +
+// 		'<span class="job-salary">' +
+// 		job.salary +
+// 		'</span>' +
+// 		'</div>' +
+// 		'</div>' +
+// 		'<p class="job-description">' +
+// 		description +
+// 		'...</p>' +
+// 		'</div>' +
+// 		'<div class="job-card-footer">' +
+// 		'<a href="' +
+// 		job.link +
+// 		'" class="job-apply-btn">View Details</a>' +
+// 		'</div>' +
+// 		'</div>'
+
+// 	return html
+// }
 
 // Load jobs when page loads
 const pageCurrentPath = window.location.pathname

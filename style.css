@@ -1474,6 +1474,156 @@ footer hr {
 		padding: 12px 16px;
 	}
 }
+/* ============================
+   Employer Container
+============================ */
+.employer-container {
+    max-width: 900px;
+    margin: 50px auto;
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+    align-items: flex-start;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.employer-img img {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.container .name {
+    font-size: 26px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.manager {
+    font-size: 17px;
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.details, .details1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.details p,
+.details1 p {
+    font-size: 15px;
+    color: #374151;
+}
+
+/* ============================
+   Employer Info Grid
+============================ */
+.employer-info {
+    max-width: 900px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.jobs {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #1f2937;
+}
+.job-locations ul,
+.job-categories ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+
+.job-locations ul li,
+.job-categories ul li {
+    background: #e5e7eb; 
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #374151;
+    font-weight: 500;
+}
+
+
+/* ============================
+   Requirements Section
+============================ */
+.requirements {
+    grid-column: 1 / -1;
+    background: #f3f4f6;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+.requirements .info {
+    font-size: 20px;
+    margin-bottom: 14px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.requirements p {
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4b5563;
+}
+
+.subscribe {
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #2563eb;
+    border-radius: 10px;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.subscribe:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+}
+
+/* ============================
+   Responsive
+============================ */
+@media (max-width: 768px) {
+    .employer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .employer-info {
+        grid-template-columns: 1fr;
+    }
+
+    .requirements {
+        grid-column: span 1;
+    }
+}
+
 
 /* ===========================
    ABOUT US PAGE STYLES
