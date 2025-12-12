@@ -439,6 +439,27 @@ if (navList && pages) {
 	})
 }
 
+document.getElementById("newsletter-btn").addEventListener("click", function () {
+    const email = document.getElementById("newsletter-email").value.trim();
+
+    if (!email) {
+        alert("Please enter your email.");
+        return;
+    }
+
+    emailjs.send("service_cokimu2", "template_x9982fc", {
+        subscriber_email: email,
+    })
+    .then(() => {
+        alert("Subscribed successfully!");
+        document.getElementById("newsletter-email").value = "";
+    })
+    .catch((err) => {
+        console.error(err);
+        alert("Failed to subscribe.");
+    });
+});
+
     function sendCode() {
         const email = document.getElementById("emailInput").value.trim();
 
@@ -558,7 +579,11 @@ function loadJobs() {
 		console.error('Error loading jobs:', error)
 		console.error('Error stack:', error.stack)
 	}
-} // Render jobs to the page
+}
+
+
+
+// Render jobs to the page
 function renderJobs(jobsToRender = null) {
 	const jobContainer = document.querySelector('.job-all-container')
 	console.log(jobContainer)

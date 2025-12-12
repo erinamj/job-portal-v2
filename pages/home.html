@@ -4,6 +4,10 @@
         <title>find the job.</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script>
+	        emailjs.init("gSJirXgjXxGsFwtMu"); 
+        </script>
 
     </head>
     <body>
@@ -64,12 +68,12 @@
                 <button type="submit" class="enter"> View All </button>
             </form>
         </div>
-        <div class="email">
-            <h2>Enter your email to not miss any job oportunity!</h2>
-            <input class="users-data" type="email" name="email" placeholder="Write your e-mail here!">
-            <!-- <input type="button" value="Go"/> -->
-            <button>Go</button>
-        </div>
+        <div class="email" class="newsletter-box">
+    <p>Enter your email to not miss any job opportunity!</p>
+    <input  class="users-data" type="email" id="newsletter-email" placeholder="Write your e-mail here!">
+    <button id="newsletter-btn">Go</button>
+</div>
+
     </div>
 
     <footer>
@@ -110,6 +114,7 @@
                 <input class="users-data" type="text">
                <button class="enter-forgotpw">Submit</button>
             </div>
+
         </div>
     </footer>
     <p class="cr">Copyright © 2023 find the job.</p>
