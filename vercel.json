@@ -1,5 +1,8 @@
 {
-	"rewrites": [{ "source": "/", "destination": "pages/home.html" }],
+	"rewrites": [
+    { "source": "/", "destination": "/pages/home.html" },
+    { "source": "/(.*)", "destination": "/pages/$1.html" }
+  	],
 	"headers": [
 		{
 			"source": "/(.*).json",

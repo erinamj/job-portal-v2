@@ -439,9 +439,33 @@ if (navList && pages) {
 	})
 }
 
-function sendCode() {
-	alert('We have sent you an email with the code!')
-}
+    function sendCode() {
+        const email = document.getElementById("emailInput").value.trim();
+
+        if (!email) {
+            alert("Please enter an email.");
+            return;
+        }
+
+        const code = Math.floor(100000 + Math.random() * 900000);
+
+        localStorage.setItem("resetCode", code);
+        localStorage.setItem("resetEmail", email);
+
+        emailjs.send("service_cokimu2", "template_qbqtexj", {
+            to_email: email,     
+            code: code           
+        })
+        .then(() => {
+            alert("Code sent to: " + email);
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Failed to send email.");
+        });
+    }
+
+
 function ruajShenimet() {
 	var name = document.getElementById('username')
 	var password = document.getElementById('password')

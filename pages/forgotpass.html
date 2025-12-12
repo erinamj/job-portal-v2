@@ -3,6 +3,11 @@
 		<title>find the job.</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../style.css" />
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+	emailjs.init("gSJirXgjXxGsFwtMu"); 
+</script>
+
 	</head>
 	<body class="auth-page">
 
@@ -24,16 +29,12 @@
 				<form class="auth-form" onsubmit="return false;">
 					<div class="form-group">
 						<label>Email address</label>
-						<input 
-							type="text"
-							placeholder="Email address"
-							class="form-input"
-						/>
+						<input id="emailInput" type="text" placeholder="Email address" class="form-input">
+
 					</div>
 
-					<button class="auth-button" onclick="sendCode()">
-						Send Code
-					</button>
+					<button class="auth-button" onclick="sendCode()">Send Code</button>
+
 				</form>
 
 			</div>
