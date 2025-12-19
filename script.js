@@ -579,6 +579,19 @@ function ruajRegister() {
 	}
 }
 
+
+function getSearchQueryFromURL() {
+	const params = new URLSearchParams(window.location.search)
+	return params.get('search') || ''
+}
+
+
+
+
+
+
+
+
 // Load jobs from embedded data
 function loadJobs() {
 	console.log('loadJobs function started')
@@ -596,6 +609,10 @@ function loadJobs() {
 			console.log('First job:', allJobs[0])
 		}
 
+		// 🔍 READ SEARCH QUERY
+		const searchQuery = getSearchQueryFromURL()
+		console.log('Search query:', searchQuery)
+
 		// Determine current page from URL
 		const currentPath = window.location.pathname
 		console.log('Current path in loadJobs:', currentPath)
@@ -604,22 +621,39 @@ function loadJobs() {
 			currentPage = 2
 		} else if (currentPath.includes('vaj3.html')) {
 			currentPage = 3
-		} else if (currentPath.includes('view_all_jobs.html')) {
-			currentPage = 1
 		} else {
-			// Home page - show only first 8 jobs
 			currentPage = 1
 		}
 
 		console.log('Current page set to:', currentPage)
-		console.log('About to call renderJobs')
-		renderJobs()
-		console.log('renderJobs called')
+
+		// 🔎 FILTER IF SEARCH EXISTS
+		if (searchQuery) {
+			const q = searchQuery.toLowerCase()
+
+			const filteredJobs = allJobs.filter((job) => {
+				return (
+					job.title.toLowerCase().includes(q) ||
+					job.company.toLowerCase().includes(q) ||
+					job.description.toLowerCase().includes(q) ||
+					job.location.toLowerCase().includes(q)
+				)
+			})
+
+			console.log('Filtered jobs:', filteredJobs.length)
+			renderJobs(filteredJobs)
+		} else {
+			console.log('No search query, rendering all jobs')
+			renderJobs()
+		}
+
+		console.log('renderJobs finished')
 	} catch (error) {
 		console.error('Error loading jobs:', error)
 		console.error('Error stack:', error.stack)
 	}
 }
+
 
 
 
@@ -829,4 +863,27 @@ function createJobCardElement(job) {
 	}
 
 	return jobListing
+}
+// HOME PAGE SEARCH → REDIRECT
+const homeSearchBtn = document.getElementById('job-search-btn')
+const homeSearchInput = document.getElementById('job-search-input')
+
+if (homeSearchBtn && homeSearchInput) {
+	homeSearchBtn.addEventListener('click', function () {
+		const query = homeSearchInput.value.trim()
+
+		if (query !== '') {
+			window.location.href =
+				'view_all_jobs.html?search=' + encodeURIComponent(query)
+		} else {
+			window.location.href = 'view_all_jobs.html'
+		}
+	})
+}
+
+
+const isAllJobsPage = document.querySelector('.all-jobs-page')
+
+if (isAllJobsPage) {
+	loadJobs()
 }
